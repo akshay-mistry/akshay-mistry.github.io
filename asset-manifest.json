@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/portfolio/static/css/main.0299aad1.css",
+    "main.js": "/portfolio/static/js/main.43d08d18.js",
+    "static/media/original.png": "/portfolio/static/media/original.3a40e37182b362c2317b.png",
+    "static/media/img.png": "/portfolio/static/media/img.3bdafc6661f3c6a2d494.png",
+    "static/media/site-bg.jpg": "/portfolio/static/media/site-bg.54724d703024833ef9c6.jpg",
+    "static/media/math.jpeg": "/portfolio/static/media/math.a036e104cecb706fbf5e.jpeg",
+    "static/media/digit.png": "/portfolio/static/media/digit.615e7fbbb0283758d217.png",
+    "static/media/AI.png": "/portfolio/static/media/AI.34613bd6c9b925843b80.png",
+    "static/media/VIKING_LOGO.jpg": "/portfolio/static/media/VIKING_LOGO.e73c93ca15fa0b2cddb0.jpg",
+    "static/media/tecg.png": "/portfolio/static/media/tecg.d6bae2675e6a7cbb75ad.png",
+    "static/media/at.png": "/portfolio/static/media/at.c59457ae3f9a6c3a3db4.png",
+    "static/media/matlab.png": "/portfolio/static/media/matlab.b6c588e6c60e61b7ffb3.png",
+    "static/media/code-ninjas.webp": "/portfolio/static/media/code-ninjas.5b5e70fe0cb3399311b6.webp",
+    "index.html": "/portfolio/index.html",
+    "main.0299aad1.css.map": "/portfolio/static/css/main.0299aad1.css.map",
+    "main.43d08d18.js.map": "/portfolio/static/js/main.43d08d18.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.0299aad1.css",
+    "static/js/main.43d08d18.js"
+  ]
+}
