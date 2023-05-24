@@ -90,7 +90,7 @@ const Home = () => {
 
 
  return (
-    <section className='section min-h-[85vh] lg:min-h[78vh] flex items-center sm:px-4' id='home'>
+    <section className='section min-h-[85vh] lg:min-h[78vh] flex items-center sm:px-4 skills-container' id='home'>
      <div className="container mx-auto">
        <div className='particles-container'>
          <Particles options={options} init={particlesInit} />
