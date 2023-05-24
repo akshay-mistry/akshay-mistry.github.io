@@ -1,11 +1,10 @@
-
 module.exports = {
   content: ['./src/**/*.{js,jsx,ts,tsx}'],
   theme: {
     fontFamily: {
-      primary: 'Poppins', /*btn*/
-      secondary: 'Open Sans', /*everything*/
-      tertiary: 'Helvetica Neue',
+      primary: 'Poppins !important', /* Add !important here */
+      secondary: 'Open Sans !important',
+      tertiary: 'Helvetica Neue !important',
     },
     container: {
       padding: {
@@ -26,7 +25,6 @@ module.exports = {
       backgroundImage: {
         site: "url('./assets/site-bg.jpg')",
       },
-
     },
   },
   plugins: [],
@@ -41,7 +39,4 @@ module.exports = {
       http: false,
     },
   }
-  
-  
 };
-
