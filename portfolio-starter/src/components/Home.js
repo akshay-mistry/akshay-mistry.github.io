@@ -90,12 +90,12 @@ const Home = () => {
 
 
  return (
-    <section className='section min-h-[85vh] lg:min-h[78vh] flex items-center sm:px-4 skills-container' id='home'>
+    <section className='section min-h-[85vh] lg:min-h[78vh] flex-wrap flex items-center sm:px-4 max-w-x2' id='home'>
      <div className="container mx-auto">
        <div className='particles-container'>
          <Particles options={options} init={particlesInit} />
        </div>
-       <div className='flex flex-col gap-y-8 lg:flex-row lg:items-center lg:gap-x-12'>
+       <div className='flex flex-row gap-y-8 lg:flex-row lg:items-center lg:gap-x-12'>
         
          <div className='flex-1 text-center font-secondary lg:text-left'>
            <motion.h1
@@ -103,7 +103,7 @@ const Home = () => {
              initial="hidden"
              whileInView={'show'}
              viewport={{once:false, amount: 0.7}}
-             className='text-white text-[48px] font-bold leading-[0.8] lg:text-[56px]'>
+             className='text-white text-[40px] font-bold leading-[0.8] lg:text-[56px]'>
              AKSHAY <span>MISTRY</span>
            </motion.h1>
 
@@ -113,7 +113,7 @@ const Home = () => {
              initial="hidden"
              whileInView={'show'}
              viewport={{once:false, amount: 0.7}}
-             className='mb-6 text-[36px] lg:text-[40px] font-secondary font-semibold uppercase leading-[1]'>
+             className='mb-6 text-[24px] lg:text-[40px] font-secondary font-semibold uppercase leading-[1]'>
              <span className='mr-4'>I am a</span>
              <TypeAnimation
                sequence={ [

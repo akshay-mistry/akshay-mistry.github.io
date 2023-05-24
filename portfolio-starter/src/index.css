@@ -4,8 +4,14 @@
 
 
 .skills-container {
-  padding: 20px; /* Adjust the padding as per your requirement */
+  padding: 20px; 
 }
+
+.home-container {
+  margin-left: 40px;
+  margin-right: 40px;
+}
+
 
 .tile {
   background: #1d1836;

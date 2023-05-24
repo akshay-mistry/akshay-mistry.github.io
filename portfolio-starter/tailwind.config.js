@@ -2,9 +2,9 @@ module.exports = {
   content: ['./src/**/*.{js,jsx,ts,tsx}'],
   theme: {
     fontFamily: {
-      primary: 'Poppins', /* Add !important here */
+      primary: 'Poppins',
       secondary: 'Poppins',
-      tertiary: 'Helvetica Neue !important',
+      tertiary: 'Helvetica Neue',
     },
     container: {
       padding: {
