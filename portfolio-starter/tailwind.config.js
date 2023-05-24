@@ -3,7 +3,7 @@ module.exports = {
   content: ['./src/**/*.{js,jsx,ts,tsx}'],
   theme: {
     fontFamily: {
-      primary: 'Orbitron', /*btn*/
+      primary: 'Poppins', /*btn*/
       secondary: 'Open Sans', /*everything*/
       tertiary: 'Helvetica Neue',
     },

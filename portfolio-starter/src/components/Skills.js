@@ -63,22 +63,22 @@ const Skills = () => {
   ];
 
   return (
-    <div className='section px-4 md:px-0' id='skills'>
-      <div className='flex flex-col items-center'>
-        <h2 className='text-4xl font-bold mb-4'>Skills</h2>
-        <p className='text-gray-500 mb-6 text-lg text-center lg:w-3/4'>
+    <div className="section px-4 md:px-0" id="skills">
+      <div className="flex flex-col items-center">
+        <h2 className="text-4xl font-bold mb-4">Skills</h2>
+        <p className="text-gray-500 mb-6 text-lg text-center lg:w-3/4">
           Below are the programming languages, frameworks, and tools that I am proficient in.
         </p>
       </div>
-        <div className='flex flex-wrap justify-center gap-x-6 gap-y-4 max-w-max mx-auto lg:mx-0'>
-          {technologies.map((tech, index) => (
-            <div key={index} className='flex flex-col items-center w-1/7'>
-              {React.createElement(tech.icon, { size: 64, className: 'skill-icon' })}
-              <span className='mt-2'>{tech.name}</span>
-            </div>
-          ))}
-        </div>
+      <div className="flex flex-wrap justify-center gap-x-6 gap-y-4 max-w-max mx-auto lg:mx-0 skills-container">
+        {technologies.map((tech, index) => (
+          <div key={index} className="flex flex-col items-center w-1/7">
+            {React.createElement(tech.icon, { size: 44, className: 'skill-icon' })}
+            <span className="mt-2">{tech.name}</span>
+          </div>
+        ))}
       </div>
+    </div>
   );
 };
 

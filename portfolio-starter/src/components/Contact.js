@@ -1,6 +1,6 @@
 import React, { useRef, useState } from "react";
 import { motion } from "framer-motion";
-import emailjs from "emailjs-com";
+import emailjs from "@emailjs/browser";
 
 const Contact = () => {
   const formRef = useRef();
@@ -13,13 +13,10 @@ const Contact = () => {
   const [loading, setLoading] = useState(false);
 
   const handleChange = (e) => {
-    const { target } = e;
-    const { name, value } = target;
-
-    setForm({
-      ...form,
-      [name]: value,
-    });
+    setForm((prevData) => ({
+        ...prevData,
+        [e.target.id] : e.target.value
+    }))
   };
 
   const handleSubmit = (e) => {
@@ -28,8 +25,8 @@ const Contact = () => {
 
     emailjs
       .send(
-        process.env.REACT_APP_EMAILJS_SERVICE_ID,
-        process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
+        'service_yige6ap',
+        'template_rm6mw9s',
         {
           from_name: form.name,
           to_name: "Akshay Mistry",
@@ -37,7 +34,7 @@ const Contact = () => {
           to_email: "akshay.mistry@gmail.com",
           message: form.message,
         },
-        process.env.REACT_APP_EMAILJS_PUBLIC_KEY
+        'XEe9yCMDPksvH4jkg'
       )
       .then(
         () => {
@@ -53,6 +50,7 @@ const Contact = () => {
         (error) => {
           setLoading(false);
           console.error(error);
+          
 
           alert("Please try again.");
         }
