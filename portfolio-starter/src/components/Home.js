@@ -103,7 +103,7 @@ const Home = () => {
              initial="hidden"
              whileInView={'show'}
              viewport={{once:false, amount: 0.7}}
-             className='text-white text-[40px] font-bold leading-[0.8] lg:text-[56px]'>
+             className='text-white text-[48px] font-bold leading-[0.8] lg:text-[56px]'>
              AKSHAY <span>MISTRY</span>
            </motion.h1>
 
@@ -113,7 +113,7 @@ const Home = () => {
              initial="hidden"
              whileInView={'show'}
              viewport={{once:false, amount: 0.7}}
-             className='mb-6 text-[24px] lg:text-[40px] font-secondary font-semibold uppercase leading-[1]'>
+             className='mb-6 text-[36px] lg:text-[40px] font-secondary font-semibold uppercase leading-[1]'>
              <span className='mr-4'>I am a</span>
              <TypeAnimation
                sequence={ [
@@ -137,7 +137,7 @@ const Home = () => {
              initial="hidden"
              whileInView={'show'}
              viewport={{once:false, amount: 0.7}}
-             className='mb-8 max-w-lg mx-auto lg:mx-0'>
+             className='mb-8 max-w-lg mx-auto lg:mx-0 sm:max-w-full'>
              Hey, I'm Akshay! I'm an undergraduate student at Georgia Tech studying CS and math, seeking new opportunities to learn and expand my abilities as a developer. I'm interested in full-stack development, machine learning, and data science, and I love to innovate and solve problems. Browse through my site to view my portfolio of work, including my research and some of my favorite personal projects!
            </motion.p>
           
