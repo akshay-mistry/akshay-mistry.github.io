@@ -2,8 +2,8 @@ module.exports = {
   content: ['./src/**/*.{js,jsx,ts,tsx}'],
   theme: {
     fontFamily: {
-      primary: 'Poppins !important', /* Add !important here */
-      secondary: 'Open Sans !important',
+      primary: 'Poppins', /* Add !important here */
+      secondary: 'Poppins',
       tertiary: 'Helvetica Neue !important',
     },
     container: {
