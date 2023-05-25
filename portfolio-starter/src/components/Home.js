@@ -90,12 +90,12 @@ const Home = () => {
 
 
  return (
-    <section className='section min-h-[85vh] lg:min-h[78vh] flex-wrap flex items-center sm:px-4 max-w-x2' id='home'>
-     <div className="container mx-auto">
+    <section className='section px-4 md:px-0' id='home'>
+     <div className="flex justify-center flex-wrap max-w-screen-lg">
        <div className='particles-container'>
          <Particles options={options} init={particlesInit} />
        </div>
-       <div className='flex flex-row gap-y-8 lg:flex-row lg:items-center lg:gap-x-12'>
+       <div className='flex flex-col gap-y-8 lg:flex-row lg:items-center lg:gap-x-12'>
         
          <div className='flex-1 text-center font-secondary lg:text-left'>
            <motion.h1
