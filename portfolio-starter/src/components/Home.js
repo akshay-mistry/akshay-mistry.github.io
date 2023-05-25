@@ -88,125 +88,120 @@ const Home = () => {
    }
  };
 
+
  return (
-  <section className='section px-4 md:px-0' id='home'>
-    <div className='flex justify-center flex-wrap max-w-screen-lg'>
-      <div className='particles-container'>
-        <Particles options={options} init={particlesInit} />
-      </div>
-      <div className='text-center mb-6 max-w-lg w-full'>
-        <div className='flex-1 text-center mb-6 font-secondary lg:text-left'>
-          <motion.h1
-            variants={fadeIn('up', 0.4)}
-            initial='hidden'
-            whileInView='show'
-            viewport={{ once: false, amount: 0.7 }}
-            className='text-white text-[48px] font-bold leading-[0.8] lg:text-[56px]'>
-            AKSHAY <span>MISTRY</span>
-          </motion.h1>
+    <section className='section min-h-[85vh] lg:min-h[78vh] flex items-center' id='home'>
+     <div className="container mx-auto">
+       <div className='particles-container'>
+         <Particles options={options} init={particlesInit} />
+       </div>
+       <div className='flex flex-col gap-y-8 lg:flex-row lg:items-center lg:gap-x-12'>
+        
+         <div className='flex-1 text-center font-secondary lg:text-left'>
+           <motion.h1
+             variants={fadeIn('up', 0.4)}
+             initial="hidden"
+             whileInView={'show'}
+             viewport={{once:false, amount: 0.7}}
+             className='text-white text-[48px] font-bold leading-[0.8] lg:text-[56px]'>
+             AKSHAY <span>MISTRY</span>
+           </motion.h1>
 
-          <motion.div
-            variants={fadeIn('up', 0.4)}
-            initial='hidden'
-            whileInView='show'
-            viewport={{ once: false, amount: 0.7 }}
-            className='mb-6 text-[36px] lg:text-[40px] font-secondary font-semibold uppercase leading-[1]'>
-            <span className='mr-4'>I am a</span>
-            <TypeAnimation
-              sequence={[
-                'Student',
-                2000,
-                'Developer',
-                2000,
-                'Leader',
-                2000,
-              ]}
-              speed={50}
-              className='text-accent'
-              wrapper='span'
-              repeat={Infinity}
-            />
-          </motion.div>
 
-          <motion.p
-            variants={fadeIn('up', 0.4)}
-            initial='hidden'
-            whileInView='show'
-            viewport={{ once: false, amount: 0.7 }}
-            className='mb-8 max-w-lg mx-auto lg:mx-0 text-[14px] lg:text-[18px]'>
-            Hey, I'm Akshay! I'm an undergraduate student at Georgia Tech studying CS and math, seeking new opportunities to learn and expand my abilities as a developer. I'm interested in full-stack development, machine learning, and data science, and I love to innovate and solve problems. Browse through my site to view my portfolio of work, including my research and some of my favorite personal projects!
-          </motion.p>
+           <motion.div
+             variants={fadeIn('up', 0.4)}
+             initial="hidden"
+             whileInView={'show'}
+             viewport={{once:false, amount: 0.7}}
+             className='mb-6 text-[36px] lg:text-[40px] font-secondary font-semibold uppercase leading-[1]'>
+             <span className='mr-4'>I am a</span>
+             <TypeAnimation
+               sequence={ [
+                 'Student',
+                 2000,
+                 'Developer',
+                 2000,
+                 'Leader',
+                 2000
+               ]}
+               speed={50}
+               className='text-accent'
+               wrapper='span'
+               repeat={Infinity}
+             />
+           </motion.div>
 
-          <div className='flex max-w-lg mb-12 mx-auto lg:mx-0'>
-            <motion.button
-              variants={fadeIn('up', 0.4)}
-              initial='hidden'
-              whileInView='show'
-              viewport={{ once: false, amount: 0.7 }}
-              className='btn1 btn-lg'>
-              <a href='https://drive.google.com/file/d/1Awgg1x8RSmZjgxEACvRfl3h22kW7H7Rm/view?usp=sharing' target='_blank' rel='noopener noreferrer'>
-                <AiOutlineLink className='mr-2' />
-                Resume
-              </a>
-            </motion.button>
-            <motion.button
-              variants={fadeIn('up', 0.4)}
-              initial='hidden'
-              whileInView='show'
-              viewport={{ once: false, amount: 0.7 }}
-              className='btn2 btn-lg'>
-              <Link to='projects' smooth={true} duration={1000}>
-                My Work
-              </Link>
-            </motion.button>
-          </div>
 
-          <div className='flex justify-center max-w-xs mx-auto'>
-            <motion.a
-              variants={fadeIn('up', 0.4)}
-              initial='hidden'
-              whileInView='show'
-              viewport={{ once: false, amount: 0.7 }}
-              href='mailto:example@example.com'
-              className='social-icon mr-3'>
-              <AiOutlineMail />
-            </motion.a>
-            <motion.a
-              variants={fadeIn('up', 0.4)}
-              initial='hidden'
-              whileInView='show'
-              viewport={{ once: false, amount: 0.7 }}
-              href='https://www.linkedin.com/'
-              target='_blank'
-              rel='noopener noreferrer'
-              className='social-icon mr-3'>
-              <AiOutlineLinkedin />
-            </motion.a>
-            <motion.a
-              variants={fadeIn('up', 0.4)}
-              initial='hidden'
-              whileInView='show'
-              viewport={{ once: false, amount: 0.7 }}
-              href='https://github.com/'
-              target='_blank'
-              rel='noopener noreferrer'
-              className='social-icon'>
-              <AiOutlineGithub />
-            </motion.a>
-          </div>
-        </div>
-        <motion.div
-          variants={fadeIn('up', 0.4)}
-          initial='hidden'
-          whileInView='show'
-          viewport={{ once: false, amount: 0.7 }}
-          className='hidden lg:flex flex-1 max-w-[300px] lg:max-w-[400px]'>
-          <img src={Image} alt='' />
-        </motion.div>
-      </div>
-    </div>
-  </section>
-);
+           <motion.p
+             variants={fadeIn('up', 0.4)}
+             initial="hidden"
+             whileInView={'show'}
+             viewport={{once:false, amount: 0.7}}
+             className='mb-8 max-w-lg mx-auto lg:mx-0 text-[14px] lg:text-[18px]'>
+             Hey, I'm Akshay! I'm an undergraduate student at Georgia Tech studying CS and math, seeking new opportunities to learn and expand my abilities as a developer. I'm interested in full-stack development, machine learning, and data science, and I love to innovate and solve problems. Browse through my site to view my portfolio of work, including my research and some of my favorite personal projects!
+           </motion.p>
+          
+           <div className='flex max-w-lg mb-12 mx-auto lg:mx-0'>
+             <motion.button
+               variants={fadeIn('up', 0.4)}
+               initial="hidden"
+               whileInView={'show'}
+               viewport={{once:false, amount: 0.7}}
+               className='btn1 btn-lg'>
+               <a href="https://drive.google.com/file/d/1AwZ03kIYMqgSIV7p6-CRoCFmZF9McoaB/view?usp=share_link" target="_blank" rel="noopener noreferrer">Resume</a>
+             </motion.button>
+
+
+             <motion.button
+               variants={fadeIn('up', 0.4)}
+               initial="hidden"
+               whileInView={'show'}
+               viewport={{once:false, amount: 0.7}}
+               className='btn2 btn-lg'>
+               <Link
+                 to='contact'
+                 className='cursor-pointer p-4'
+                 activeClass='active'
+                 smooth={true}
+                 spy={true}
+               >Contact</Link>
+             </motion.button>
+           </div>
+          
+           <motion.div
+             variants={fadeIn('up', 0.4)}
+             initial="hidden"
+             whileInView={'show'}
+             viewport={{once:false, amount: 0.7}}
+             className='flex text-[20px] gap-x-6 max-w-max mx-auto lg:mx-0'>
+             <a href="mailto:akshay.mistry@gmail.com" target="_blank" rel="noopener noreferrer">
+               <AiOutlineMail size={44} />
+             </a>
+             <a href="https://linkedin.com/in/akshaymistry-" target="_blank" rel="noopener noreferrer">
+               <AiOutlineLinkedin size={44} />
+             </a>
+             <a href="https://github.com/akshay-mistry" target="_blank" rel="noopener noreferrer">
+               <AiOutlineGithub size={44} />
+             </a>
+           </motion.div>
+        
+
+
+         </div>
+         <motion.div
+           variants={fadeIn('up', 0.4)}
+           initial="hidden"
+           whileInView={'show'}
+           viewport={{once:false, amount: 0.7}}
+           className='hidden lg:flex flex-1 max-w-[300px] lg:max-w-[400px]'>
+           <img src={Image} alt='' />
+         </motion.div>
+       </div>
+     </div>
+   </section>
+ );
 };
 
+
 export default Home;
+
