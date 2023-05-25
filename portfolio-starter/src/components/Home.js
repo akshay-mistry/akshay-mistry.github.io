@@ -90,7 +90,7 @@ const Home = () => {
 
 
  return (
-    <section className='section min-h-[85vh] lg:min-h[78vh] flex justify-center flex-wrap max-w-screen-lg px-4' id='home'>
+    <section className='section min-h-[85vh] lg:min-h[78vh] flex-wrap flex items-center sm:px-4 max-w-x2' id='home'>
      <div className="container mx-auto">
        <div className='particles-container'>
          <Particles options={options} init={particlesInit} />
@@ -137,7 +137,7 @@ const Home = () => {
              initial="hidden"
              whileInView={'show'}
              viewport={{once:false, amount: 0.7}}
-             className='mb-8 max-w-lg mx-auto lg:mx-0 sm:max-w-full'>
+             className='mb-8 max-w-lg mx-auto lg:mx-0 text-[14px] lg:text-[18px]'>
              Hey, I'm Akshay! I'm an undergraduate student at Georgia Tech studying CS and math, seeking new opportunities to learn and expand my abilities as a developer. I'm interested in full-stack development, machine learning, and data science, and I love to innovate and solve problems. Browse through my site to view my portfolio of work, including my research and some of my favorite personal projects!
            </motion.p>
           
