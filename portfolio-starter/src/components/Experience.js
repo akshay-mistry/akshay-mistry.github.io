@@ -29,7 +29,7 @@ const information = [
     place: "Bank of New York Mellon",
     title: "Software Engineering Intern",
     location: "New York, NY",
-    date: "June 2023 - Present",
+    date: "June 2023 - Aug 2024",
     description: [
       "Developed deep learning risk management models to automate capacity planning algorithms for 200 stakeholders in the bank.",
       "Predicted 350 over/underutilized Oracle database nodes with 0.95 RMS error using data processing pipelines with Apache Spark.",
@@ -47,8 +47,8 @@ const information = [
     description: [
       "GPA: 4.00/4.00, Faculty Honors",
       "Concentrations: Artificial Intelligence & Information Internetworks",
-      "Courses: Automated Algorithm Design Project Team, Graduate Machine Learning, Graduate Computer Vision, Computer Networking, Algorithms, AI, Systems & Networks, Data Structures, Objects & Design, Database Systems, Combinatorics, Probability Theory, Statistics, Linear Algebra, Discrete Math",
-      "Activities: Data Science Club Executive Board, Agency AI/ML Club, Web Dev Club, Startup Exchange, GT Qurbani Dance Team"
+      "Courses: Graduate Machine Learning, Graduate Computer Vision, Computer Networking, Algorithms, AI, Systems & Networks, Data Structures, Objects & Design, Database Systems, Combinatorics, Probability Theory, Statistics, Linear Algebra, Discrete Math",
+      "Activities: Computer Systems and Networking Teaching Assistant, Automated Algorithm Design Research Team, Data Science Club Executive Board, Agency AI/ML Club, Web Dev Club, Startup Exchange, GT Qurbani Dance Team"
     ],
     icon: gt,
     iconBg: "#FFFFFF"
