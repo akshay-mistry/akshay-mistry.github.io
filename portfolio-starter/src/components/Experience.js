@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css';
+import amazon from '../assets/amazon.png';
 import bny from '../assets/bny.jpeg';
 import gt from '../assets/tecg.png';
 import at from '../assets/at.png';
@@ -16,8 +17,12 @@ const information = [
     location: "San Francisco, CA",
     date: "May 2024 - Aug 2024",
     description: [
+      "Engineered core features for an ultra-low latency, fault-tolerant, intelligent Amazon Music search engine API built on Java+AWS.",
+      "Developed a GenAI “Trending Now” search assistant using an end-to-end RAG Agent workflow, vector embedding, Redis caching, and Elasticsearch cataloging to guide 82+ million users to tailored music news and content based on high-velocity search queries.",
+      "Engineered a production-level LLM-based code reviewer for 3.6+ million repositories in Amazon’s Code Browser, leveraging extensive coding guidelines and historical reviews to provide feedback using Amazon Bedrock, Lambda, and Notification Services.",
+      "Reduced Lambda function invocation latency by 66% through the use of parallel programming in Java for concurrent task execution."
     ],
-    icon: bny,
+    icon: amazon,
     iconBg: "#FFFFFF"
   },
   {
@@ -26,19 +31,23 @@ const information = [
     location: "New York, NY",
     date: "June 2023 - Present",
     description: [
+      "Developed deep learning risk management models to automate capacity planning algorithms for 200 stakeholders in the bank.",
+      "Predicted 350 over/underutilized Oracle database nodes with 0.95 RMS error using data processing pipelines with Apache Spark.",
+      "Constructed Pytorch LSTM recurrent neural networks for 90-day CPU forecasting & tuned hyperparameters to reduce error by 73%.",
+      "Created a Flask+AngularJS web app for Plotly Dash interface, automating scripts to update time-series daily with SQLAlchemy."
     ],
     icon: bny,
     iconBg: "#FFFFFF"
   },
   {
     place: "Georgia Institute of Technology",
-    title: "Bachelor of Science in Computer Science, Minor in Mathematics, Certificate in Finance",
+    title: "Bachelor of Science in Computer Science, Minor in Mathematics",
     location: "Atlanta, GA",
-    date: "Aug 2022 - May 2025",
+    date: "Aug 2022 - May 2026",
     description: [
       "GPA: 4.00/4.00, Faculty Honors",
       "Concentrations: Artificial Intelligence & Information Internetworks",
-      "Courses: Automated Algorithm Design Project Team, Data Structures & Algorithms, Intro to Artificial Intelligence, Computer Organization & Programming, Discrete Mathematics, Intro to Database Systems, Objects & Design, Object Oriented Programming, Statistics & Applications, Multivariable Calculus, Linear Algebra, Computing & Society",
+      "Courses: Automated Algorithm Design Project Team, Graduate Machine Learning, Graduate Computer Vision, Computer Networking, Algorithms, AI, Systems & Networks, Data Structures, Objects & Design, Database Systems, Combinatorics, Probability Theory, Statistics, Linear Algebra, Discrete Math",
       "Activities: Data Science Club Executive Board, Agency AI/ML Club, Web Dev Club, Startup Exchange, GT Qurbani Dance Team"
     ],
     icon: gt,
