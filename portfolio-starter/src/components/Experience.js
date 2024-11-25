@@ -21,8 +21,8 @@ const information = [
     iconBg: "#FFFFFF"
   },
   {
-    place: "The Bank of New York Mellon",
-    title: "SoftwareEngineering Intern",
+    place: "Bank of New York Mellon",
+    title: "Software Engineering Intern",
     location: "New York, NY",
     date: "June 2023 - Present",
     description: [
