@@ -43,7 +43,7 @@ const information = [
     place: "Georgia Institute of Technology",
     title: "Bachelor of Science in Computer Science, Minor in Mathematics",
     location: "Atlanta, GA",
-    date: "Aug 2022 - May 2026",
+    date: "Aug 2022 - Present",
     description: [
       "GPA: 4.00/4.00, Faculty Honors",
       "Concentrations: Artificial Intelligence & Information Internetworks",
