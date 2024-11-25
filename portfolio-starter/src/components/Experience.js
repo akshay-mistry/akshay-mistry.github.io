@@ -11,6 +11,16 @@ import { AiOutlinePlusCircle, AiOutlineMinusCircle } from 'react-icons/ai';
 
 const information = [
   {
+    place: "Amazon",
+    title: "Software Development Engineer Intern",
+    location: "San Francisco, CA",
+    date: "May 2024 - Aug 2024",
+    description: [
+    ],
+    icon: bny,
+    iconBg: "#FFFFFF"
+  },
+  {
     place: "The Bank of New York Mellon",
     title: "SoftwareEngineering Intern",
     location: "New York, NY",
