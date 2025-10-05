@@ -2,11 +2,7 @@ import React from 'react';
 import Particles from "react-tsparticles";
 import { loadFull } from "tsparticles";
 import { useCallback } from "react";
-
-
-
-
-import Image from '../assets/img.png'
+import Image from '../assets/github ghibili.jpeg'
 import { TypeAnimation } from 'react-type-animation';
 import { motion } from 'framer-motion';
 import { fadeIn } from '../variants';
@@ -90,115 +86,151 @@ const Home = () => {
 
 
  return (
-    <section className='section min-h-[85vh] lg:min-h[78vh] max-w-screen-lg flex items-center' id='home'>
-     <div className='container mx-auto'>
-       <div className='particles-container'>
-         <Particles options={options} init={particlesInit} />
-       </div>
-       <div className='flex flex-col gap-y-8 lg:flex-row lg:items-center lg:gap-x-12'>
-        
-         <div className='flex-1 text-center font-secondary lg:text-left'>
-           <motion.h1
-             variants={fadeIn('up', 0.4)}
-             initial="hidden"
-             whileInView={'show'}
-             viewport={{once:false, amount: 0.7}}
-             className='text-white text-[44px] font-bold leading-[0.8] lg:text-[56px]'>
-             AKSHAY <span>MISTRY</span>
-           </motion.h1>
+    <section className='min-h-screen flex items-center justify-center relative overflow-hidden' id='home'>
+      {/* Particles Background */}
+      <div className='absolute inset-0 z-0'>
+        <Particles options={options} init={particlesInit} />
+      </div>
+      
+      <div className='container mx-auto px-4 relative z-10'>
+        <div className='flex flex-col lg:flex-row items-center justify-between gap-12'>
+          {/* Content */}
+          <div className='flex-1 text-center lg:text-left'>
+            <motion.h1
+              variants={fadeIn('up', 0.4)}
+              initial="hidden"
+              whileInView={'show'}
+              viewport={{once:false, amount: 0.7}}
+              className='mb-6 text-gradient'
+            >
+              AKSHAY <span className='text-white'>MISTRY</span>
+            </motion.h1>
 
+            <motion.div
+              variants={fadeIn('up', 0.4)}
+              initial="hidden"
+              whileInView={'show'}
+              viewport={{once:false, amount: 0.7}}
+              className='mb-8 text-2xl lg:text-3xl'
+            >
+              <span className='mr-4 text-white font-medium'>I am a</span>
+              <TypeAnimation
+                sequence={[
+                  'Student',
+                  2000,
+                  'Developer',
+                  2000,
+                  'Leader',
+                  2000,
+                  'Innovator',
+                  2000
+                ]}
+                speed={50}
+                className='text-gradient font-semibold'
+                wrapper='span'
+                repeat={Infinity}
+              />
+            </motion.div>
 
-           <motion.div
-             variants={fadeIn('up', 0.4)}
-             initial="hidden"
-             whileInView={'show'}
-             viewport={{once:false, amount: 0.7}}
-             className='mb-6 text-[32px] lg:text-[40px] font-secondary font-semibold uppercase leading-[1]'>
-             <span className='mr-4'>I am a</span>
-             <TypeAnimation
-               sequence={ [
-                 'Student',
-                 2000,
-                 'Developer',
-                 2000,
-                 'Leader',
-                 2000
-               ]}
-               speed={50}
-               className='text-accent'
-               wrapper='span'
-               repeat={Infinity}
-             />
-           </motion.div>
+            <motion.p
+              variants={fadeIn('up', 0.4)}
+              initial="hidden"
+              whileInView={'show'}
+              viewport={{once:false, amount: 0.7}}
+              className='mb-12 max-w-2xl mx-auto lg:mx-0'
+            >
+              Hey, I'm Akshay! I'm an undergraduate student at Georgia Tech studying CS and math, 
+              seeking new opportunities to learn and expand my abilities as a developer. I'm interested 
+              in full-stack development, machine learning, and data science, and I love to innovate and solve problems.
+            </motion.p>
+            
+            {/* Action Buttons */}
+            <div className='flex flex-col sm:flex-row gap-4 mb-12 justify-center lg:justify-start'>
+              <motion.a
+                variants={fadeIn('up', 0.4)}
+                initial="hidden"
+                whileInView={'show'}
+                viewport={{once:false, amount: 0.7}}
+                href="https://drive.google.com/file/d/1AwZ03kIYMqgSIV7p6-CRoCFmZF9McoaB/view?usp=share_link"
+                target="_blank"
+                rel="noopener noreferrer"
+                className='btn-modern'
+              >
+                View Resume
+              </motion.a>
 
+              <motion.div
+                variants={fadeIn('up', 0.4)}
+                initial="hidden"
+                whileInView={'show'}
+                viewport={{once:false, amount: 0.7}}
+              >
+                <Link
+                  to='contact'
+                  className='btn-modern btn-outline'
+                  smooth={true}
+                  spy={true}
+                >
+                  Get In Touch
+                </Link>
+              </motion.div>
+            </div>
+            
+            {/* Social Links */}
+            <motion.div
+              variants={fadeIn('up', 0.4)}
+              initial="hidden"
+              whileInView={'show'}
+              viewport={{once:false, amount: 0.7}}
+              className='flex justify-center lg:justify-start gap-6'
+            >
+              <a 
+                href="mailto:akshay.mistry@gmail.com" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className='p-3 glass rounded-full hover:scale-110 transition-all duration-300 hover:shadow-lg'
+              >
+                <AiOutlineMail size={24} />
+              </a>
+              <a 
+                href="https://linkedin.com/in/akshaymistry-" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className='p-3 glass rounded-full hover:scale-110 transition-all duration-300 hover:shadow-lg'
+              >
+                <AiOutlineLinkedin size={24} />
+              </a>
+              <a 
+                href="https://github.com/akshay-mistry" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className='p-3 glass rounded-full hover:scale-110 transition-all duration-300 hover:shadow-lg'
+              >
+                <AiOutlineGithub size={24} />
+              </a>
+            </motion.div>
+          </div>
 
-           <motion.p
-             variants={fadeIn('up', 0.4)}
-             initial="hidden"
-             whileInView={'show'}
-             viewport={{once:false, amount: 0.7}}
-             className='mb-8 max-w-lg mx-20 lg:mx-0'>
-             Hey, I'm Akshay! I'm an undergraduate student at Georgia Tech studying CS and math, seeking new opportunities to learn and expand my abilities as a developer. I'm interested in full-stack development, machine learning, and data science, and I love to innovate and solve problems. Browse through my site to view my portfolio of work, including my research and some of my favorite personal projects!
-           </motion.p>
-          
-           <div className='flex max-w-lg mb-12 mx-auto lg:mx-0'>
-             <motion.button
-               variants={fadeIn('up', 0.4)}
-               initial="hidden"
-               whileInView={'show'}
-               viewport={{once:false, amount: 0.7}}
-               className='btn1 btn-lg'>
-               <a href="https://drive.google.com/file/d/1AwZ03kIYMqgSIV7p6-CRoCFmZF9McoaB/view?usp=share_link" target="_blank" rel="noopener noreferrer">Resume</a>
-             </motion.button>
-
-
-             <motion.button
-               variants={fadeIn('up', 0.4)}
-               initial="hidden"
-               whileInView={'show'}
-               viewport={{once:false, amount: 0.7}}
-               className='btn2 btn-lg'>
-               <Link
-                 to='contact'
-                 className='cursor-pointer p-4'
-                 activeClass='active'
-                 smooth={true}
-                 spy={true}
-               >Contact</Link>
-             </motion.button>
-           </div>
-          
-           <motion.div
-             variants={fadeIn('up', 0.4)}
-             initial="hidden"
-             whileInView={'show'}
-             viewport={{once:false, amount: 0.7}}
-             className='flex text-[20px] gap-x-6 max-w-max mx-auto lg:mx-0'>
-             <a href="mailto:akshay.mistry@gmail.com" target="_blank" rel="noopener noreferrer">
-               <AiOutlineMail size={44} />
-             </a>
-             <a href="https://linkedin.com/in/akshaymistry-" target="_blank" rel="noopener noreferrer">
-               <AiOutlineLinkedin size={44} />
-             </a>
-             <a href="https://github.com/akshay-mistry" target="_blank" rel="noopener noreferrer">
-               <AiOutlineGithub size={44} />
-             </a>
-           </motion.div>
-        
-
-
-         </div>
-         <motion.div
-           variants={fadeIn('up', 0.4)}
-           initial="hidden"
-           whileInView={'show'}
-           viewport={{once:false, amount: 0.7}}
-           className='hidden lg:flex flex-1 max-w-[300px] lg:max-w-[400px]'>
-           <img src={Image} alt='' />
-         </motion.div>
-       </div>
-     </div>
-   </section>
+          {/* Profile Image */}
+          <motion.div
+            variants={fadeIn('up', 0.4)}
+            initial="hidden"
+            whileInView={'show'}
+            viewport={{once:false, amount: 0.7}}
+            className='flex-1 max-w-md lg:max-w-lg flex items-center justify-center'
+          >
+            <div className='relative group'>
+              <div className='absolute inset-0 bg-gradient-to-r from-white to-gray-300 rounded-full blur-xl opacity-10 group-hover:opacity-20 transition-opacity duration-300'></div>
+              <img 
+                src={Image} 
+                alt='Akshay Mistry' 
+                className='relative w-128 h-128 rounded-full object-cover border-2 border-white border-opacity-30 shadow-2xl group-hover:scale-105 transition-transform duration-300'
+              />
+            </div>
+          </motion.div>
+        </div>
+      </div>
+    </section>
  );
 };
 

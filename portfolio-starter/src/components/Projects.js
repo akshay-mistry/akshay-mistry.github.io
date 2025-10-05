@@ -4,7 +4,7 @@ import AI from '../assets/AI.png';
 import map from '../assets/original.png';
 import digit from '../assets/digit.png';
 import math from '../assets/math.jpeg';
-import { AiOutlineLink } from 'react-icons/ai';
+import { AiOutlineLink, AiOutlineGithub } from 'react-icons/ai';
 
 const information = [
   { 
@@ -94,74 +94,85 @@ const information = [
 
 const Projects = () => {
   return (
-    <div className='section px-4 md:px-0' id='projects'>
-      <div className='flex justify-center flex-wrap max-w-screen-lg'>
-        <div className="text-center mb-6">
-          <h2 className="text-4xl font-bold">Featured Projects</h2>
-          <p className="text-2x1 text-gray-500  lg:block mt-4">Check out some of my favorite projects! Visit my Github and Devpost profiles for more!</p>
-          <p className="text-2x1 text-gray-500  lg:block mt-4 underline">
-          <a href="https://github.com/akshay-mistry" target="_blank" rel="noopener noreferrer">
-          https://github.com/akshay-mistry
-              </a>
-              </p>
-          <p className="text-2x1 text-gray-500  lg:block mt-4 underline">
-          <a href="https://devpost.com/akshaymistry" target="_blank" rel="noopener noreferrer">
-          https://devpost.com/akshaymistry
-              </a>
-              </p>
-        </div>
-        {information.map((project, index) => (
-          <div key={index} className='m-2'>
-            <Tilt
-              options={{
-                max: 45,
-                scale: 1,
-                speed: 500,
-              }}
-              className='tile p-5 rounded-2xl sm:w-[450px] w-full ]' // Added fixed height
+    <div className='section-modern' id='projects'>
+      <div className='container mx-auto px-4'>
+        <div className="text-center mb-16">
+          <h2 className="mb-6 text-gradient">Featured Projects</h2>
+          <p className="max-w-3xl mx-auto mb-8">
+    
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <a 
+              href="https://github.com/akshay-mistry" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="btn-modern btn-sm"
             >
-              <div className='relative w-full h-[320px]'>
-                <img
-                  onClick={() => window.open(project.project_link, '_blank')}
-                  src={project.image}
-                  alt='project_image'
-                  className='w-full h-full object-contain rounded-2xl'
-                />
+              <AiOutlineGithub size={20} className="mr-2" />
+              GitHub Profile
+            </a>
+            <a 
+              href="https://devpost.com/akshaymistry" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="btn-modern btn-outline btn-sm"
+            >
+              <AiOutlineLink size={20} className="mr-2" />
+              Devpost Profile
+            </a>
+          </div>
+        </div>
 
-                <div className='absolute inset-0 flex justify-end m-3 card-img_hover'>
-                  <div
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+          {information.map((project, index) => (
+            <div key={index} className="project-card group">
+              <div className="relative overflow-hidden rounded-t-2xl">
+                <img
+                  src={project.image}
+                  alt={project.name}
+                  className="project-image"
+                />
+                <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-60 transition-all duration-300 flex items-center justify-center">
+                  <button
                     onClick={() => window.open(project.project_link, '_blank')}
-                    className='black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer'
+                    className="opacity-0 group-hover:opacity-100 transform scale-75 group-hover:scale-100 transition-all duration-300 glass p-4 rounded-full"
                   >
-                    <div className='tile rounded-full'>
-                      <AiOutlineLink size={70} color='gray-400' />
-                    </div>
-                  </div>
+                    <AiOutlineLink size={32} className="text-white" />
+                  </button>
                 </div>
               </div>
 
-              <div className='mt-5'>
-                <h3 className='text-white font-bold text-[24px]'>
+              <div className="p-6">
+                <h3 className="text-white mb-4 group-hover:text-gradient transition-colors duration-300">
                   {project.name}
                 </h3>
-                <p className='mt-2 text-white text-[14px]'>
+                <p className="text-gray-300 mb-6">
                   {project.description}
                 </p>
-              </div>
 
-              <div className='mt-4 flex flex-wrap gap-2'>
-                {project.tags.map((tag) => (
-                  <p
-                    key={`${project.name}-${tag.name}`}
-                    className='text-[14px] text-white font-bold bg-gray-600 rounded-full px-2 py-1'
-                  >
-                    #{tag.name}
-                  </p>
-                ))}
+                <div className="flex flex-wrap gap-2 mb-6">
+                  {project.tags.map((tag, tagIndex) => (
+                    <span
+                      key={`${project.name}-${tag.name}-${tagIndex}`}
+                      className="px-3 py-1 bg-gradient-to-r from-gray-200 to-white text-black text-sm font-medium rounded-full"
+                    >
+                      {tag.name}
+                    </span>
+                  ))}
+                </div>
+
+                <button
+                  onClick={() => window.open(project.project_link, '_blank')}
+                  className="w-full btn-modern"
+                >
+                  View Project
+                  <AiOutlineLink size={16} className="ml-2" />
+                </button>
               </div>
-            </Tilt>
-          </div>
-        ))}
+            </div>
+          ))}
+        </div>
+
       </div>
     </div>
   );

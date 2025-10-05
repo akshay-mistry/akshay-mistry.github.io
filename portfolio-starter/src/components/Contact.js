@@ -1,6 +1,7 @@
 import React, { useRef, useState } from "react";
 import { motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
+import { AiOutlineMail, AiOutlineLinkedin, AiOutlineGithub } from 'react-icons/ai';
 
 const Contact = () => {
   const formRef = useRef();
@@ -58,66 +59,162 @@ const Contact = () => {
   };
 
   return (
-    <div className="section px-4 md:px-0" id="contact">
-      <div className="flex flex-col items-center">
-        <h2 className="text-4xl font-bold mb-4">Contact Me</h2>
-        <p className="text-gray-500 mb-6 text-lg text-center lg:w-3/4">
-          Fill out the form below to connect with me, and I will get back to you as soon as possible!
-        </p>
-      </div>
+    <div className="section-modern" id="contact">
+      <div className="container mx-auto px-4">
+        <div className="text-center mb-16">
+          <h2 className="mb-6 text-gradient">Get In Touch</h2>
+          <p className="max-w-3xl mx-auto">
+            </p>
+        </div>
 
-      <div>
-        <form className="tile shadow-md rounded px-8 pt-6 pb-8 mb-4" onSubmit={handleSubmit}>
-          <div className="mb-4">
-            <label className="block text-white text-sm font-bold mb-2" htmlFor="name">
-              Name
-            </label>
-            <input
-              type="text"
-              value={form.name}
-              className="bg-gray-200 border border-gray-300 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:border-blue-500"
-              placeholder="Name"
-              onChange={handleChange}
-              id="name"
-            />
-          </div>
-          <div className="mb-4">
-            <label className="block text-white text-sm font-bold mb-2" htmlFor="email">
-              Email
-            </label>
-            <input
-              type="text"
-              value={form.email}
-              className="bg-gray-200 border border-gray-300 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:border-blue-500"
-              placeholder="Email"
-              onChange={handleChange}
-              id="email"
-            />
-          </div>
-          <div className="mb-6">
-            <label className="block text-white text-sm font-bold mb-2" htmlFor="message">
-              Message
-            </label>
-            <textarea
-              rows="4"
-              value={form.message}
-              className="bg-gray-200 border border-gray-300 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:border-blue-500"
-              placeholder="Message"
-              onChange={handleChange}
-              id="message"
-            />
-          </div>
+        <div className="max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            {/* Contact Form */}
+            <div className="form-modern">
+              <h3 className="text-white mb-6">Send me a message</h3>
+              <form onSubmit={handleSubmit} className="space-y-6">
+                <div>
+                  <label className="block text-white text-sm font-semibold mb-2" htmlFor="name">
+                    Name
+                  </label>
+                  <input
+                    type="text"
+                    value={form.name}
+                    className="form-input"
+                    placeholder="Your name"
+                    onChange={handleChange}
+                    id="name"
+                    required
+                  />
+                </div>
+                
+                <div>
+                  <label className="block text-white text-sm font-semibold mb-2" htmlFor="email">
+                    Email
+                  </label>
+                  <input
+                    type="email"
+                    value={form.email}
+                    className="form-input"
+                    placeholder="your.email@example.com"
+                    onChange={handleChange}
+                    id="email"
+                    required
+                  />
+                </div>
+                
+                <div>
+                  <label className="block text-white text-sm font-semibold mb-2" htmlFor="message">
+                    Message
+                  </label>
+                  <textarea
+                    rows="6"
+                    value={form.message}
+                    className="form-input resize-none"
+                    placeholder="Tell me about your project or just say hello!"
+                    onChange={handleChange}
+                    id="message"
+                    required
+                  />
+                </div>
 
-          <div className="flex items-center justify-center">
-            <button
-              type="submit"
-              className="btn3 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-              disabled={loading}
-            >
-              {loading ? "Sending..." : "Send Message"}
-            </button>
+                <button
+                  type="submit"
+                  className="w-full btn-modern"
+                  disabled={loading}
+                >
+                  {loading ? (
+                    <div className="flex items-center justify-center">
+                      <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white mr-2"></div>
+                      Sending...
+                    </div>
+                  ) : (
+                    "Send Message"
+                  )}
+                </button>
+              </form>
+            </div>
+
+            {/* Contact Information */}
+            <div className="space-y-8">
+              <div className="card-modern">
+                <h3 className="text-white mb-6">Let's connect</h3>
+                <div className="space-y-4">
+                  <div className="flex items-center space-x-4">
+                    <div className="glass p-3 rounded-full">
+                      <AiOutlineMail size={24} className="text-white" />
+                    </div>
+                    <div>
+                      <p className="text-gray-300">Email</p>
+                      <a 
+                        href="mailto:akshay.mistry@gmail.com" 
+                        className="text-white hover:text-gradient transition-colors duration-300"
+                      >
+                        akshay.mistry@gmail.com
+                      </a>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-center space-x-4">
+                    <div className="glass p-3 rounded-full">
+                      <AiOutlineLinkedin size={24} className="text-white" />
+                    </div>
+                    <div>
+                      <p className="text-gray-300">LinkedIn</p>
+                      <a 
+                        href="https://linkedin.com/in/akshaymistry-" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="text-white hover:text-gradient transition-colors duration-300"
+                      >
+                        linkedin.com/in/akshaymistry-
+                      </a>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-center space-x-4">
+                    <div className="glass p-3 rounded-full">
+                      <AiOutlineGithub size={24} className="text-white" />
+                    </div>
+                    <div>
+                      <p className="text-gray-300">GitHub</p>
+                      <a 
+                        href="https://github.com/akshay-mistry" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="text-white hover:text-gradient transition-colors duration-300"
+                      >
+                        github.com/akshay-mistry
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="card-modern">
+                <h3 className="text-white mb-4">Quick facts</h3>
+                <div className="space-y-3">
+                  <div className="flex justify-between">
+                    <span className="text-gray-300">Location:</span>
+                    <span className="text-white">Atlanta, GA</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="text-gray-300">University:</span>
+                    <span className="text-white">Georgia Tech</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="text-gray-300">Major:</span>
+                    <span className="text-white">Computer Science</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="text-gray-300">Minor:</span>
+                    <span className="text-white">Mathematics</span>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-        </form>
+        </div>
       </div>
     </div>
   );

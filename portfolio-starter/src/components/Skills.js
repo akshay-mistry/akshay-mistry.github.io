@@ -36,47 +36,74 @@ import mat from '../assets/matlab.png';
 
 const Skills = () => {
   const technologies = [
-    { icon: FaJava, name: 'Java' },
-    { icon: FaPython, name: 'Python' },
-    { icon: FaJs, name: 'JavaScript' },
-    { icon: FaHtml5, name: 'HTML' },
-    { icon: FaCss3Alt, name: 'CSS' },
-    { icon: SiLatex, name: 'LaTeX' },
-    { icon: FaCode, name: 'MATLAB' },
-    { icon: FaSwift, name: 'Swift' },
-    { icon: SiC, name: 'C' },
-    { icon: SiMysql, name: 'SQL' },
-    { icon: FaAndroid, name: 'Android App Dev' },
-    { icon: FaApple, name: 'iOS App Dev' },
-    { icon: SiPandas, name: 'Pandas' },
-    { icon: SiOpencv, name: 'OpenCV' },
-    { icon: FaRaspberryPi, name: 'Raspberry Pi' },
-    { icon: SiArduino, name: 'Arduino' },
-    { icon: SiUnity, name: 'Unity Game Dev' },
-    { icon: SiAutodesk, name: 'CAD' },
-    { icon: FaGit, name: 'Git' },
-    { icon: SiVisualstudiocode, name: 'VS Code' },
-    { icon: SiJupyter, name: 'Jupyter Notebook' },
-    { icon: SiEclipseide, name: 'Eclipse' },
-    { icon: SiPycharm, name: 'PyCharm' },
-    { icon: SiIntellijidea, name: 'Intellij' },
+    { icon: FaJava, name: 'Java', category: 'Programming' },
+    { icon: FaPython, name: 'Python', category: 'Programming' },
+    { icon: FaJs, name: 'JavaScript', category: 'Programming' },
+    { icon: FaHtml5, name: 'HTML', category: 'Web' },
+    { icon: FaCss3Alt, name: 'CSS', category: 'Web' },
+    { icon: SiLatex, name: 'LaTeX', category: 'Documentation' },
+    { icon: FaCode, name: 'MATLAB', category: 'Programming' },
+    { icon: FaSwift, name: 'Swift', category: 'Mobile' },
+    { icon: SiC, name: 'C', category: 'Programming' },
+    { icon: SiMysql, name: 'SQL', category: 'Database' },
+    { icon: FaAndroid, name: 'Android', category: 'Mobile' },
+    { icon: FaApple, name: 'iOS', category: 'Mobile' },
+    { icon: SiPandas, name: 'Pandas', category: 'Data Science' },
+    { icon: SiOpencv, name: 'OpenCV', category: 'Computer Vision' },
+    { icon: FaRaspberryPi, name: 'Raspberry Pi', category: 'Hardware' },
+    { icon: SiArduino, name: 'Arduino', category: 'Hardware' },
+    { icon: SiUnity, name: 'Unity', category: 'Game Dev' },
+    { icon: SiAutodesk, name: 'CAD', category: 'Design' },
+    { icon: FaGit, name: 'Git', category: 'Version Control' },
+    { icon: SiVisualstudiocode, name: 'VS Code', category: 'IDE' },
+    { icon: SiJupyter, name: 'Jupyter', category: 'Data Science' },
+    { icon: SiEclipseide, name: 'Eclipse', category: 'IDE' },
+    { icon: SiPycharm, name: 'PyCharm', category: 'IDE' },
+    { icon: SiIntellijidea, name: 'IntelliJ', category: 'IDE' },
   ];
 
+  const categories = [...new Set(technologies.map(tech => tech.category))];
+
   return (
-    <div className="section px-4 md:px-0" id="skills">
-      <div className="flex flex-col items-center">
-        <h2 className="text-4xl font-bold mb-4">Skills</h2>
-        <p className="text-gray-500 mb-6 text-lg text-center lg:w-3/4">
-          Below are the programming languages, frameworks, and tools that I am proficient in.
-        </p>
-      </div>
-      <div className="flex flex-wrap justify-center gap-x-6 gap-y-4 max-w-max mx-auto lg:mx-0 skills-container">
-        {technologies.map((tech, index) => (
-          <div key={index} className="flex flex-col items-center w-1/7">
-            {React.createElement(tech.icon, { size: 44, className: 'skill-icon' })}
-            <span className="mt-2">{tech.name}</span>
+    <div className="section-modern" id="skills">
+      <div className="container mx-auto px-4">
+        <div className="text-center mb-16">
+          <h2 className="mb-6 text-gradient">Skills & Technologies</h2>
+          <p className="max-w-3xl mx-auto">
+            A comprehensive overview of the programming languages, frameworks, and tools 
+            that I use to bring ideas to life.
+          </p>
+        </div>
+
+        <div className="skills-grid">
+          {technologies.map((tech, index) => (
+            <div key={index} className="skill-item group">
+              <div className="skill-icon text-4xl mb-3 group-hover:scale-110 transition-transform duration-300">
+                {React.createElement(tech.icon)}
+              </div>
+              <h3 className="text-white mb-1 font-medium">{tech.name}</h3>
+              <span className="text-sm text-gray-400 bg-gray-800 px-2 py-1 rounded-full font-medium">
+                {tech.category}
+              </span>
+            </div>
+          ))}
+        </div>
+
+        {/* Skills Summary */}
+        <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="card-modern text-center">
+            <div className="text-4xl font-bold text-gradient mb-2">24+</div>
+            <div className="text-gray-300">Technologies Mastered</div>
           </div>
-        ))}
+          <div className="card-modern text-center">
+            <div className="text-4xl font-bold text-gradient mb-2">8+</div>
+            <div className="text-gray-300">Categories Covered</div>
+          </div>
+          <div className="card-modern text-center">
+            <div className="text-4xl font-bold text-gradient mb-2">5+</div>
+            <div className="text-gray-300">Years Experience</div>
+          </div>
+        </div>
       </div>
     </div>
   );

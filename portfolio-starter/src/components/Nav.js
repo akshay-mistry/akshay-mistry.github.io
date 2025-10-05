@@ -2,171 +2,171 @@ import React, { useState, useEffect } from 'react';
 import { AiOutlineClose, AiOutlineMenu, AiOutlineLink } from 'react-icons/ai';
 import { Link } from 'react-scroll';
 
-
 const Nav = () => {
- const [nav, setNav] = useState(false);
+  const [nav, setNav] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
+  const handleNav = () => {
+    setNav(!nav);
+  };
 
- const handleNav = () => {
-   setNav(!nav);
- };
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 768) {
+        setNav(false);
+      }
+    };
 
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
+    };
 
- useEffect(() => {
-   const handleResize = () => {
-     if (window.innerWidth >= 768) {
-       setNav(false);
-     }
-   };
+    window.addEventListener('resize', handleResize);
+    window.addEventListener('scroll', handleScroll);
 
+    return () => {
+      window.removeEventListener('resize', handleResize);
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
-   window.addEventListener('resize', handleResize);
+  return (
+    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-150 ${
+      scrolled ? 'nav-modern' : 'bg-transparent'
+    }`}>
+      <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
+        <div className='flex justify-between items-center h-20'>
+          {/* Logo */}
+          <div className='flex-shrink-0'>
+            <Link
+              to='home'
+              className='text-2xl font-bold text-gradient cursor-pointer'
+              smooth={true}
+              spy={true}
+            >
+              Akshay Mistry
+            </Link>
+          </div>
 
+          {/* Desktop Navigation */}
+          <div className='hidden md:block'>
+            <div className='ml-10 flex items-baseline space-x-4'>
+              <Link
+                to='home'
+                className='nav-link'
+                activeClass='active'
+                smooth={true}
+                spy={true}
+                offset={-100}
+              >
+                Home
+              </Link>
+              <Link
+                to='experience'
+                className='nav-link'
+                activeClass='active'
+                smooth={true}
+                spy={true}
+              >
+                Experience
+              </Link>
+              <Link
+                to='projects'
+                className='nav-link'
+                activeClass='active'
+                smooth={true}
+                spy={true}
+              >
+                Projects
+              </Link>
+              <Link
+                to='contact'
+                className='nav-link'
+                activeClass='active'
+                smooth={true}
+                spy={true}
+              >
+                Contact
+              </Link>
+              <a
+                href="https://drive.google.com/file/d/1AwZ03kIYMqgSIV7p6-CRoCFmZF9McoaB/view?usp=share_link"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-modern btn-sm flex items-center"
+              >
+                Resume <AiOutlineLink size={16} className="ml-2" />
+              </a>
+            </div>
+          </div>
 
-   return () => {
-     window.removeEventListener('resize', handleResize);
-   };
- }, []);
+          {/* Mobile menu button */}
+          <div className='md:hidden'>
+            <button
+              onClick={handleNav}
+              className='text-white hover:text-gray-300 focus:outline-none focus:text-gray-300 transition duration-150 ease-in-out'
+            >
+              {nav ? <AiOutlineClose size={24} /> : <AiOutlineMenu size={24} />}
+            </button>
+          </div>
+        </div>
+      </div>
 
-
- return (
-   <div className='flex justify-between items-center h-24 max-w-[1240px] mx-auto px-4 text-white'>
-     <h1 className='w-full text-3xl font-bold text-accent'>Akshay Mistry</h1>
-     <ul className='hidden md:flex'>
-       <Link
-         to='home'
-         className='cursor-pointer p-4'
-         activeClass='active'
-         smooth={true}
-         spy={true}
-         offset={-200}
-       >
-         Home
-       </Link>
-       <Link
-         to='skills'
-         className='cursor-pointer p-4'
-         activeClass='active'
-         smooth={true}
-         spy={true}
-       >
-         Skills
-       </Link>
-       <Link
-         to='experience'
-         className='cursor-pointer p-4'
-         activeClass='active'
-         smooth={true}
-         spy={true}
-       >
-         Experience
-       </Link>
-       <Link
-         to='projects'
-         className='cursor-pointer p-4'
-         activeClass='active'
-         smooth={true}
-         spy={true}
-       >
-         Projects
-       </Link>
-  
-       <Link
-         to='contact'
-         className='cursor-pointer p-4'
-         activeClass='active'
-         smooth={true}
-         spy={true}
-       >
-         Contact
-       </Link>
-       <a
-        href="https://drive.google.com/file/d/1AwZ03kIYMqgSIV7p6-CRoCFmZF9McoaB/view?usp=share_link"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="flex items-center cursor-pointer p-4">
-          Resume <AiOutlineLink size={18} className="ml-1" />
-       </a>
-     </ul>
-     {window.innerWidth >= 768 && (
-       <div onClick={handleNav} className='block md:hidden'>
-         {nav ? <AiOutlineClose size={20}/> : null}
-       </div>
-     )}
-     {window.innerWidth >= 768 && (
-       <ul className={nav ? 'fixed left-0 top-0 w-[60%] h-full border-r border-r-gray-900 bg-[#000300] ease-in-out duration-500' : 'ease-in-out duration-500 fixed left-[-100%]'}>
-         <h1 className='w-full text-3xl font-bold text-[#1111111] m-4'>Akshay Mistry</h1>
-         <li className='p-4 border-b border-gray-600'>
-           <Link
-             to='home'
-             className='cursor-pointer p-4'
-             activeClass='active'
-             smooth={true}
-             spy={true}
-           >
-             Home
-           </Link>
-         </li>
-         <li className='p-4 border-b border-gray-600'>
-           <Link
-             to='skills'
-             className='cursor-pointer p-4'
-             activeClass='active'
-             smooth={true}
-             spy={true}
-           >
-             Skills
-           </Link>
-         </li>
-         <li className='p-4 border-b border-gray-600'>
-           <Link
-             to='experience'
-             className='cursor-pointer p-4'
-             activeClass='active'
-             smooth={true}
-             spy={true}
-           >
-             Experience
-           </Link>
-         </li>
-         <li className='p-4 border-b border-gray-600'>
-           <Link
-             to='projects'
-             className='cursor-pointer p-4'
-             activeClass='active'
-             smooth={true}
-             spy={true}
-           >
-             Projects
-           </Link>
-         </li>
-         <li className='p-4 border-b border-gray-600'>
-           <Link
-             to='resume'
-             className='cursor-pointer p-4'
-             activeClass='active'
-             smooth={true}
-             spy={true}
-           >
-             Resume
-           </Link>
-         </li>
-         <li className='p-4 border-b border-gray-600'>
-           <Link
-             to='contact'
-             className='cursor-pointer p-4'
-             activeClass='active'
-             smooth={true}
-             spy={true}
-           >
-             Contact
-           </Link>
-         </li>
-       </ul>
-     )}
-   </div>
- );
+      {/* Mobile Navigation */}
+      <div className={`md:hidden transition-all duration-300 ease-in-out ${
+        nav ? 'opacity-100 visible' : 'opacity-0 invisible'
+      }`}>
+        <div className='glass-strong mx-4 mt-2 rounded-2xl p-6'>
+          <div className='space-y-1'>
+            <Link
+              to='home'
+              className='block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-white hover:bg-opacity-10 transition duration-150 ease-in-out'
+              onClick={() => setNav(false)}
+              smooth={true}
+              spy={true}
+            >
+              Home
+            </Link>
+            <Link
+              to='experience'
+              className='block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-white hover:bg-opacity-10 transition duration-150 ease-in-out'
+              onClick={() => setNav(false)}
+              smooth={true}
+              spy={true}
+            >
+              Experience
+            </Link>
+            <Link
+              to='projects'
+              className='block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-white hover:bg-opacity-10 transition duration-150 ease-in-out'
+              onClick={() => setNav(false)}
+              smooth={true}
+              spy={true}
+            >
+              Projects
+            </Link>
+            <Link
+              to='contact'
+              className='block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-white hover:bg-opacity-10 transition duration-150 ease-in-out'
+              onClick={() => setNav(false)}
+              smooth={true}
+              spy={true}
+            >
+              Contact
+            </Link>
+            <a
+              href="https://drive.google.com/file/d/1AwZ03kIYMqgSIV7p6-CRoCFmZF9McoaB/view?usp=share_link"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-white hover:bg-opacity-10 transition duration-150 ease-in-out"
+              onClick={() => setNav(false)}
+            >
+              Resume <AiOutlineLink size={16} className="inline ml-2" />
+            </a>
+          </div>
+        </div>
+      </div>
+    </nav>
+  );
 };
-
 
 export default Nav;

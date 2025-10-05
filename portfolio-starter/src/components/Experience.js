@@ -120,57 +120,70 @@ const Experience = () => {
   };
 
   return (
-    <div className='section' id='experience'>
-      <div className='flex justify-center flex-wrap max-w-screen-lg'>
-        <div className="text-center mb-6">
-          <h2 className="text-4xl font-bold">Experience</h2>
-          <p className="text-2x1 text-gray-500  lg:block mt-4">Here is a timeline of my professional experience and education.</p>
+    <div className='section-modern' id='experience'>
+      <div className='container mx-auto px-4'>
+        <div className="text-center mb-16">
+          <h2 className="mb-6 text-gradient">Experience & Education</h2>
+          <p className="max-w-3xl mx-auto">
+          </p>
         </div>
-        <VerticalTimeline>
+
+        <div className="timeline-modern">
           {information.map((entry, index) => (
-            <VerticalTimelineElement
-              key={index}
-              contentStyle={{ background: '#1d1836', color: '#fff' }}
-              contentArrowStyle={{ borderRight: '7px solid  #232631' }}
-              date={entry.date}
-              iconStyle={{ background: entry.iconBg, color: '#F9F9F9'}}
-              icon={
-                <div className='flex justify-center items-center w-full h-full'>
-                  <img
-                    src={entry.icon}
-                    className="w-[60%] h-[60%] object-contain"
-                  />
+            <div key={index} className={`timeline-item ${index % 2 === 0 ? 'ml-0 mr-auto' : 'ml-auto mr-0'}`}>
+              <div className="flex items-start gap-6">
+                <div className="flex-shrink-0">
+                  <div className="w-16 h-16 glass rounded-full flex items-center justify-center">
+                    <img
+                      src={entry.icon}
+                      alt={entry.place}
+                      className="w-10 h-10 object-contain"
+                    />
+                  </div>
                 </div>
-              }
-            >
-              
-              <h3 className='text-white text-[24px]'>{entry.place}</h3>
-              <h4 className='vertical-timeline-element-subtitle'>{entry.title}</h4>
-              <h4 className='vertical-timeline-element-subtitle'>{entry.location}</h4>
+                
+                <div className="flex-1">
+                  <div className="flex justify-between items-start mb-4">
+                    <div>
+                      <h3 className="text-white mb-2">{entry.place}</h3>
+                      <h4 className="text-gray-300 mb-1 font-medium">{entry.title}</h4>
+                      <p className="text-gray-400 mb-2">{entry.location}</p>
+                      <span className="inline-block bg-gradient-to-r from-gray-200 to-white text-black px-3 py-1 rounded-full text-sm font-medium">
+                        {entry.date}
+                      </span>
+                    </div>
+                    
+                    <button
+                      onClick={() => toggleDescription(index)}
+                      className="glass p-2 rounded-full hover:scale-110 transition-all duration-300"
+                    >
+                      {expandedItems.includes(index) ? 
+                        <AiOutlineMinusCircle size={24} /> : 
+                        <AiOutlinePlusCircle size={24} />
+                      }
+                    </button>
+                  </div>
 
-              <ul className='mt-5 list-disc ml-5 space-y-2'>
-                {entry.description.map((item, descriptionIndex) => (
-                  <li
-                    key={`experience-point-${index}-${descriptionIndex}`}
-                    className={`text-white-100 text-[14px] pl-1 tracking-wider ${
-                      expandedItems.includes(index) ? 'visible' : 'hidden'
-                    }`}
-                  >
-                    {item}
-                  </li>
-                ))}
-              </ul>
-
-              <button
-                className='text-white-100 text-5x1 tracking-wider mt-0 absolute right-4 bottom-4'
-                onClick={() => toggleDescription(index)}
-              >
-                {expandedItems.includes(index) ? <AiOutlineMinusCircle size={40}></AiOutlineMinusCircle> : <AiOutlinePlusCircle size={40}></AiOutlinePlusCircle>}
-              </button>
-           
- </VerticalTimelineElement>
+                  <div className={`transition-all duration-500 overflow-hidden ${
+                    expandedItems.includes(index) ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+                  }`}>
+                    <ul className="space-y-3">
+                      {entry.description.map((item, descriptionIndex) => (
+                        <li
+                          key={`experience-point-${index}-${descriptionIndex}`}
+                          className="text-gray-300 leading-relaxed flex items-start"
+                        >
+                          <span className="w-2 h-2 bg-gradient-to-r from-gray-200 to-white rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
           ))}
-        </VerticalTimeline>
+        </div>
       </div>
     </div>
   );
